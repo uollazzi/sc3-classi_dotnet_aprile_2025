@@ -1,6 +1,7 @@
+
 namespace sc3_classi.Models;
 
-public class Autore
+public class Autore : ICommentabile
 {
     public Autore(string nome, string cognome)
     {
@@ -13,4 +14,6 @@ public class Autore
     public string Cognome { get; set; }
 
     public string NomeCompleto { get => $"{Nome} {Cognome}"; }
+
+    public List<Commento> Commenti { get; set; } = [];
 }

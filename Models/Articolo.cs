@@ -1,6 +1,7 @@
+
 namespace sc3_classi.Models;
 
-public class Articolo
+public class Articolo : ICommentabile
 {
 
     public Articolo(string titolo, string testo, DateTime dataPubblicazione, Categoria categoria, Autore autore)
@@ -20,4 +21,6 @@ public class Articolo
     public Categoria? Categoria { get; set; }
 
     public Autore? Autore { get; set; }
+
+    public List<Commento> Commenti { get; set; } = [];
 }

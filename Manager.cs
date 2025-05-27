@@ -35,4 +35,11 @@ public class Manager
         categoria.NumeroArticoli++;
         return c;
     }
+
+    public static Commento CreaCommento(ICommentabile commentabile, Autore autore, string testo, DateTime dataPubblicazione)
+    {
+        Commento c = new Commento(autore, dataPubblicazione, testo);
+        commentabile.Commenti.Add(c);
+        return c;
+    }
 }

@@ -28,3 +28,17 @@ foreach (var articolo in Manager.Articoli)
 Console.WriteLine($"Totale autori: {Manager.Autori.Count}");
 Console.WriteLine($"Totale categorie: {Manager.Categorie.Count}");
 Console.WriteLine($"Totale articoli: {Manager.Articoli.Count}");
+
+// commentatore
+var lt = Manager.CreaAutore("Leone", "Da Tastiera");
+Manager.CreaCommento(rb, lt, "Bravissimo!", DateTime.Now); // leone commenta Baggio
+Manager.CreaCommento(Manager.Articoli[0], lt, "Attenzione, non abusare!", DateTime.Now); // Leone commenta Il Cucchiaio
+Manager.CreaCommento(Manager.Articoli[0], rb, "Tecnica sopraffina!", DateTime.Now); // Baggio commenta Il Cucchiaio
+
+Console.WriteLine(new String('=', 40));
+Console.WriteLine($"Commenti a: {Manager.Articoli[0].Titolo}");
+foreach (var c in Manager.Articoli[0].Commenti)
+{
+    Console.WriteLine($"{c.Testo} - di {c.Autore.NomeCompleto}");
+}
+
